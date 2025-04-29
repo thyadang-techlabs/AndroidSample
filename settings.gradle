@@ -1,0 +1,25 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal() // <-- 가장 먼저 와야 한다!!
+        google()             // <-- 필터 걸지 말고 그냥 써야 안정적
+        mavenCentral()
+    }
+}
+
+enableFeaturePreview('VERSION_CATALOGS')
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = uri("https://bidmad-sdk.s3.amazonaws.com/") } //Bidmad
+        flatDir {
+            dirs 'app/libs'
+        }
+
+    }
+}
+
+rootProject.name = "AndroidSample"
+include ':app'
