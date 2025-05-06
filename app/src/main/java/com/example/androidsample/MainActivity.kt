@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun runLuckyverse() {
-//        LuckyVerse.instance().openLuckyVerseMain(this)
-        LuckyVerse.instance().openLuckyVerseSajuInfo(this)
+        LuckyVerse.instance().openLuckyVerseMain(this)
+//        LuckyVerse.instance().openLuckyVerseSajuInfo(this)
     }
 }
