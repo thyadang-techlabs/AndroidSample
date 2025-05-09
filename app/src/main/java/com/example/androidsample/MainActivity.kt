@@ -17,6 +17,9 @@ class MainActivity : AppCompatActivity() {
         btnLuckyverse.setOnClickListener {
             runLuckyverse()
         }
+        LuckyVerse.instance().setGoToSettingCallback {
+            Toast.makeText(this, "설정 이동 콜백 동작!", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun runLuckyverse() {
