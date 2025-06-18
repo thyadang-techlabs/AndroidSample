@@ -11,8 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        LuckyVerse.instance().updateUserId("luckybite.hana.test001")
-        LuckyVerse.instance().updateAppKey("luckybite.hana.test001")
+        LuckyVerse.instance().updateUserId("luckybite.hana.test0iowejfoi01")
+        LuckyVerse.instance().updateAppKey("hana.kG7nP4vL9x.2025:lnTnv06")
         val btnLuckyverse = findViewById<Button>(R.id.btnLuckyverse)
         btnLuckyverse.setOnClickListener {
             runLuckyverse()
