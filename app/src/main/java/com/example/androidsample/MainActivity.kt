@@ -97,7 +97,5 @@ class MainActivity : AppCompatActivity() {
         LuckyVerse.instance().updateADID("luckybite.hana.prod")
         LuckyVerse.instance().setRewardAdZoneId(activity = this, zoneId = "feed3072-a057-4e16-8a85-d4a6b0e57f92")
         LuckyVerse.instance().setInterstitialAdZoneId(activity = this, zoneId = "21abedc9-d901-43c0-b35d-40bfd8e12ea1")
-        LuckyVerse.instance().loadInterstitialAd()
-        LuckyVerse.instance().loadRewardAd()
     }
 }
