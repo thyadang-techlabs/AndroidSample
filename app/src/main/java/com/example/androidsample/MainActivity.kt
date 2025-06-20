@@ -11,91 +11,26 @@ class MainActivity : AppCompatActivity() {
         print("SOIDJO\n")
 
         LuckyVerse.instance().initialize(activity = this)
+
+
+        LuckyVerse.instance().updateUserId("사용자 식별자")
+        LuckyVerse.instance().updateAppKey("테크랩스로부터 전달받은 앱 키")
+        LuckyVerse.instance().updateADID("쿠팡 추적 광고에 사용할 adid")
+        LuckyVerse.instance().setRewardAdZoneIdForSaju("사주가 필요한 컨텐츠를 볼 때 쓸 리워드 광고 존 아이디")
+        LuckyVerse.instance().setRewardAdZoneIdForNotSaju("사주가 필요 없는 컨텐츠를 볼 때 쓸 리워드 광고 존 아이디")
+        LuckyVerse.instance().setRewardAdZoneIdForFortuneCookie("포춘쿠키 컨텐츠를 볼 때 쓸 리워드 광고 존 아이디")
+
+        LuckyVerse.instance().setGoToSettingCallback {
+            print("✅ go to setting 콜백!\n")
+            Toast.makeText(this, "go to setting 콜백 동작!", Toast.LENGTH_SHORT).show()
+        }
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val btnLuckyverse = findViewById<Button>(R.id.btnLuckyverse)
         btnLuckyverse.setOnClickListener {
-            android.app.AlertDialog.Builder(this)
-                .setTitle("서버 선택")
-                .setMessage("어떤 서버를 실행하시겠습니까?")
-                .setPositiveButton("개발 서버") { _, _ ->
-                    setDevServer()
-                    LuckyVerse.instance().openLuckyVerseMain(this)
-                }
-                .setNegativeButton("실 서버") { _, _ ->
-                    setProdServer()
-                    LuckyVerse.instance().openLuckyVerseMain(this)
-                }
-                .show()
+            LuckyVerse.instance().openLuckyVerseMain(this)
         }
 
-    }
-    fun setDevServer() {
-        var userId = ""
-        val sharedPreferences = getSharedPreferences("app_prefs", MODE_PRIVATE)
-        val savedUserId = sharedPreferences.getString("user_id_dev", null)
-
-        if (savedUserId != null) {
-            userId = savedUserId
-        } else {
-            val chars = ('A'..'Z') + ('a'..'z') + ('0'..'9')
-            val randomString = (1..5)
-                .map { chars.random() }
-                .joinToString("")
-
-            userId = "thyadang.test.dev.${randomString}"
-
-            sharedPreferences.edit().apply {
-                putString("user_id_dev", userId)
-                apply()
-            }
-        }
-
-
-
-        LuckyVerse.instance().setGoToSettingCallback {
-            print("✅ go to setting 콜백!\n")
-            Toast.makeText(this, "go to setting 콜백 동작!", Toast.LENGTH_SHORT).show()
-        }
-        LuckyVerse.instance().updateUserId(userId)
-        LuckyVerse.instance().updateAppKey("hana.kG7nP4vL9x.2025:lnTnv06")
-        LuckyVerse.instance().updateADID("luckybite.hana.test001")
-        LuckyVerse.instance().setRewardAdZoneId(activity = this, zoneId = "feed3072-a057-4e16-8a85-d4a6b0e57f92")
-        LuckyVerse.instance().setInterstitialAdZoneId(activity = this, zoneId = "21abedc9-d901-43c0-b35d-40bfd8e12ea1")
-    }
-
-    fun setProdServer() {
-
-        var userId = ""
-        val sharedPreferences = getSharedPreferences("app_prefs", MODE_PRIVATE)
-        val savedUserId = sharedPreferences.getString("user_id_prod", null)
-
-        if (savedUserId != null) {
-            userId = savedUserId
-        } else {
-            val chars = ('A'..'Z') + ('a'..'z') + ('0'..'9')
-            val randomString = (1..5)
-                .map { chars.random() }
-                .joinToString("")
-
-            userId = "thyadang.test.prod.${randomString}"
-
-            sharedPreferences.edit().apply {
-                putString("user_id_prod", userId)
-                apply()
-            }
-        }
-
-
-
-        LuckyVerse.instance().setGoToSettingCallback {
-            print("✅ go to setting 콜백!\n")
-            Toast.makeText(this, "go to setting 콜백 동작!", Toast.LENGTH_SHORT).show()
-        }
-        LuckyVerse.instance().updateUserId(userId)
-        LuckyVerse.instance().updateAppKey("hana.kG7nP4vL9x.2025")
-        LuckyVerse.instance().updateADID("luckybite.hana.prod")
-        LuckyVerse.instance().setRewardAdZoneId(activity = this, zoneId = "feed3072-a057-4e16-8a85-d4a6b0e57f92")
-        LuckyVerse.instance().setInterstitialAdZoneId(activity = this, zoneId = "21abedc9-d901-43c0-b35d-40bfd8e12ea1")
     }
 }

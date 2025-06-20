@@ -18,8 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="31">
-        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-3940256099942544~1458002511"/>
-        <meta-data android:name="com.adop.sdk.APP_DOMAIN" android:value="common-serving-bidmad.adop.co.kr"/>
+        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="테크랩스로부터 전달받은 애드몹 앱 아이디"/>
+        <meta-data android:name="com.adop.sdk.APP_DOMAIN" android:value="테크랩스로부터 발급받은 앱 도메인"/>
 
         <activity
             android:name=".MainActivity"
