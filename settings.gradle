@@ -14,6 +14,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { url = uri("https://bidmad-sdk.s3.amazonaws.com/") } //Bidmad
+        maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" } //Mintegral
         flatDir {
             dirs 'app/libs'
         }

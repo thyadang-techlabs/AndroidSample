@@ -35,9 +35,16 @@ repositories {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.22"
     implementation(name: 'LuckyVerse', ext: 'aar')
+    implementation 'androidx.activity:activity-ktx:1.8.1'
 
-    implementation "ad.helper.openbidding:admob-obh:3.20.0"
-    implementation "com.adop.sdk:bidmad-androidx:3.20.0"
-    implementation "com.adop.sdk.adapter:admob:22.0.0.6"
-    implementation "com.google.android.gms:play-services-ads:22.6.0"
+
+
+    //아래는 광고 어댑터들입니다.
+    implementation 'ad.helper.openbidding:admob-obh-hanamoney:3.21.1'
+    implementation 'com.adop.sdk:bidmad-androidx-hanamoney:3.21.1'
+    implementation 'com.adop.sdk.adapter:admob-hanamoney:23.6.0.0'
+    implementation 'com.adop.sdk.adapter:fyber-hanamoney:8.3.7.0'
+    implementation 'com.adop.sdk.adapter:unityads-hanamoney:4.6.0.0'
+    implementation 'com.adop.sdk.adapter:mobwith:1.1.2'
+    implementation 'com.adop.sdk.partners:admobbidding-hanamoney:1.0.4'
 }
