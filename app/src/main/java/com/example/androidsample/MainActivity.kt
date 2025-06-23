@@ -16,9 +16,15 @@ class MainActivity : AppCompatActivity() {
         LuckyVerse.instance().updateUserId("사용자 식별자")
         LuckyVerse.instance().updateAppKey("테크랩스로부터 전달받은 앱 키")
         LuckyVerse.instance().updateADID("쿠팡 추적 광고에 사용할 adid")
+
         LuckyVerse.instance().setRewardAdZoneIdForSaju("사주가 필요한 컨텐츠를 볼 때 쓸 리워드 광고 존 아이디")
         LuckyVerse.instance().setRewardAdZoneIdForNotSaju("사주가 필요 없는 컨텐츠를 볼 때 쓸 리워드 광고 존 아이디")
         LuckyVerse.instance().setRewardAdZoneIdForFortuneCookie("포춘쿠키 컨텐츠를 볼 때 쓸 리워드 광고 존 아이디")
+
+
+        LuckyVerse.instance().setBannerAdZoneIdForSaju( zoneId = "사주가 필요한 컨텐츠를 볼 때 쓸 배너 광고 존 아이디")
+        LuckyVerse.instance().setBannerAdZoneIdForNotSaju( zoneId = "사주가 필요 없는 컨텐츠를 볼 때 쓸 배너 광고 존 아이디")
+        LuckyVerse.instance().setBannerAdZoneIdForFortuneCookie( zoneId = "포춘쿠키 컨텐츠를 볼 때 쓸 배너 광고 존 아이디")
 
         LuckyVerse.instance().setGoToSettingCallback {
             print("✅ go to setting 콜백!\n")
